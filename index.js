@@ -12,6 +12,7 @@ const converter = new showdown.Converter();
 
 const app = express();
 const server = http.createServer(app);
+const routes = require("./routes");
 
 require("./config");
 
@@ -42,6 +43,8 @@ app.get("/", (req, res) => {
     res.render("index", { data: converter.makeHtml(data) });
   });
 });
+
+app.use("/inventory", routes.inventory);
 
 app.use("*", (req, res) =>
   res.status(404).json({

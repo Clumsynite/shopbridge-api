@@ -10,6 +10,13 @@
   },
   "keywords": [],
   "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "nodemon": "^2.0.7"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
@@ -19,7 +26,6 @@
     "moment": "^2.29.1",
     "mongoose": "^6.2.6",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15",
     "pug": "^3.0.2",
     "showdown": "^2.0.3",
     "uuid": "^8.3.2"

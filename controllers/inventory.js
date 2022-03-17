@@ -55,7 +55,9 @@ exports.updateItemByID = async (req, res) => {
 exports.deleteItemByID = async (req, res) => {
   try {
     const { _id, name } = req.body;
-    await Item.deleteOne({ _id });
+    const { deletedCount } = await Item.deleteOne({ _id });
+    // eslint-disable-next-line no-throw-literal
+    if (deletedCount === 0) throw "Item not found";
     return res.status(200).json({
       success: true,
       msg: `Removed ${name} from Inventory.`,

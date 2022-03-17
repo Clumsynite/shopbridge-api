@@ -1,4 +1,3 @@
-const { v4 } = require("uuid");
 const Item = require("../models/Item");
 
 // Not being used
@@ -30,9 +29,7 @@ exports.addNewItem = async (req, res) => {
   try {
     const item = await new Item({
       ...req.body,
-      _id: v4(),
     }).save();
-
     return res.status(200).json({ success: true, item, msg: "Successfully added Item" });
   } catch (error) {
     return res.status(500).json({ success: false, error });
